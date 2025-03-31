@@ -33,7 +33,7 @@ for file in files:
                 # Plotting
                 import matplotlib.pyplot as plt
                 plt.figure(figsize=(12, 6))
-                plt.plot(years, population_values, marker='o', linestyle='-')
+                plt.plot(years, population_values, marker='o', linestyle='-', color='turquoise')
                 plt.xlabel('Year')
                 plt.ylabel('Population')
                 plt.title('US Population Over Years')
@@ -100,17 +100,16 @@ import matplotlib.pyplot as plt
 plt.figure(figsize=(12, 6))
 
 # Scatter plot for both beaches with smaller dot size
-plt.scatter(timestamps_Ohio, water_temps_Ohio, label='Ohio Street Beach', color='blue', alpha=0.6, s=10)  # s=20 for smaller dots
-plt.scatter(timestamps_Rainbow, water_temps_Rainbow, label='Rainbow Beach', color='orange', alpha=0.6, s=10)  # s=20 for smaller dots
+plt.scatter(timestamps_Ohio, water_temps_Ohio, label='Ohio Street Beach', color='turquoise', alpha=0.6, s=10)  # s=20 for smaller dots
+plt.scatter(timestamps_Rainbow, water_temps_Rainbow, label='Rainbow Beach', color='tangerine', alpha=0.6, s=10)  # s=20 for smaller dots
 
 # Customizing the plot
-plt.xlabel('Time', fontsize=14)
+plt.xlabel('Year', fontsize=14)
 plt.ylabel('Water Temperature (°C)', fontsize=14)
 plt.title('Water Temperature Over Time at Ohio Street and Rainbow Beach', fontsize=16)
 plt.xticks(rotation=45)
 plt.ylim(water_temp_min, water_temp_max + 5)  # Set y-axis limits
 plt.legend(fontsize=12)
-plt.grid(alpha=0.3)  # Light grid for better readability
 
 # Adjust layout and show the plot
 plt.tight_layout()
@@ -125,28 +124,3 @@ plt.tight_layout()
 # # Print column headers (categories) in the dataset
 # print("Column headers in dataset:", csv_data[0].keys())
 
-'''
-# Write the markdown content to a file
-with open('Project_2.md', 'w', encoding='utf-8') as md_file:
-    markdown_content = 'Project2/plots.py'
-    md_file.write(markdown_content)
-
-print("Markdown file 'Project_2.md' has been created successfully.")
-'''
-
-# Specify the name of the Python file you want to convert
-python_file_path = 'Project2/plots.py'  # Change this to your Python file name
-markdown_file_path = 'Project2/plots.md'  # Name of the output Markdown file
-
-# Read the content of the Python file
-with open(python_file_path, 'r', encoding='utf-8') as python_file:
-    python_code = python_file.read()
-
-# Format the content as a Markdown code block
-markdown_content = f"```python\n{python_code}\n```"
-
-# Write the Markdown content to a new file
-with open(markdown_file_path, 'w', encoding='utf-8') as markdown_file:
-    markdown_file.write(markdown_content)
-
-print(f"Markdown file '{markdown_file_path}' has been created successfully.")
