@@ -33,14 +33,14 @@ for file in files:
                 # Plotting
                 import matplotlib.pyplot as plt
                 plt.figure(figsize=(12, 6))
-                plt.plot(years, population_values, marker='o', linestyle='-', color='turquoise')
+                plt.plot(years, population_values, marker='o', linestyle='-', color='teal')
                 plt.xlabel('Year')
                 plt.ylabel('Population')
                 plt.title('US Population Over Years')
                 plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
                 plt.tight_layout()
-                # plt.savefig('Population_Plot.png', bbox_inches='tight')
-                # plt.show()
+                plt.savefig('Population_Plot.png', bbox_inches='tight')
+                plt.show()
             else:
                 print("No valid population data found.")
 
@@ -100,21 +100,21 @@ import matplotlib.pyplot as plt
 plt.figure(figsize=(12, 6))
 
 # Scatter plot for both beaches with smaller dot size
-plt.scatter(timestamps_Ohio, water_temps_Ohio, label='Ohio Street Beach', color='turquoise', alpha=0.6, s=10)  # s=20 for smaller dots
-plt.scatter(timestamps_Rainbow, water_temps_Rainbow, label='Rainbow Beach', color='tangerine', alpha=0.6, s=10)  # s=20 for smaller dots
+plt.scatter(timestamps_Ohio, water_temps_Ohio, label='Ohio Street Beach', color='teal', alpha=0.6, s=10)  # s=20 for smaller dots
+plt.scatter(timestamps_Rainbow, water_temps_Rainbow, label='Rainbow Beach', color='magenta', alpha=0.6, s=10)  # s=20 for smaller dots
 
 # Customizing the plot
-plt.xlabel('Year', fontsize=14)
-plt.ylabel('Water Temperature (°C)', fontsize=14)
-plt.title('Water Temperature Over Time at Ohio Street and Rainbow Beach', fontsize=16)
+plt.xlabel('Year')
+plt.ylabel('Water Temperature (°C)')
+plt.title('Water Temperature Over Time at Ohio Street and Rainbow Beach')
 plt.xticks(rotation=45)
 plt.ylim(water_temp_min, water_temp_max + 5)  # Set y-axis limits
 plt.legend(fontsize=12)
 
 # Adjust layout and show the plot
 plt.tight_layout()
-# plt.savefig('Beach_Plot.png', bbox_inches='tight')
-# plt.show()
+plt.savefig('Beach_Plot.png', bbox_inches='tight')
+plt.show()
 
 
 
